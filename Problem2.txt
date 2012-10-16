@@ -1,0 +1,79 @@
+SAP Goods Routing
+
+LetsShop.com is a leading ecommerce service provider in City of Byteland. Customers are served goods on a daily basis and this has to be done efficiently so as to minimize the total cost incurred.
+
+The road network and delivery places can be modelled as a network of straight lines.
+  
+The above sample picture shows a possible road network road and delivery points. The straight lines are the roads and the small circles are the delivery points. The black large circle is the dispatch office of LetsShop.com.
+
+The delivery boys start in the morning from the dispatch office and set go to the appropriate places. 
+
+Constraints :
+
+1. A delivery boys is paid $x daily for his job irrespective of the number of deliveries.
+
+2. Once the delivery boy reaches a delivery place, the processing time can be assumed to be constant and thus not taken care of.
+
+3. Based on the data of previous days an approximate measure of the traffic is given on the road segments.
+
+4. The fuel cost per mile is given say $y/mile and the average speed of vehicles.
+
+5. Given a time duration T, the task is to plan the delivery in such a way that total time taken is less than T. For many possible plans that satisfy the time constraint the once that incurs the least cost should be preferred. 
+
+Input Format
+
+First line of the input contains N and M. N is the number of nodes in the network and M is the number of delivery points. Nodes are numbered 0 to N-1 and node 0 is the start node for all delivery boys. Both N & M will be less than 1000.
+
+Then follows a space separated list of M numbers which are the levels of delivery points.
+
+Then follows N-1 lines each containing 4 values, x y d p , indicating there is a road between node x and y and d is the distance between them in miles. All roads are bidirectional. When a vehicle travels on this road the speed reduces to ‘average speed’ times ‘p’.
+
+Last line of input contains four integers, cost of one delivery boy in dollars, average speed of vehicle in miles/hour, cost of petrol per mile in dollars and time in minutes to complete the task.
+
+Output Format
+
+For all delivery boys output E, the numbers of roads they used in their route. Then the list of roads in route in order they were traversed.
+
+Sample Input
+
+10 6
+2 3 5 6 8 9
+0 1 10 0.9
+0 4 10 0.8
+0 7 10 0.8
+1 2 10 0.5
+1 3 10 0.5
+4 5 10 0.6
+5 6 10 0.6
+7 8 10 0.5
+7 9 10 0.5
+1000 50 1 100
+
+Sample Output
+
+4
+0 1
+1 2
+2 1
+1 3
+3
+0 4
+4 5
+5 6
+4
+0 7
+7 9
+9 7
+7 8
+
+Explanation : The above input corresponds to this network
+
+Starting from node 0 products has to be delivered to nodes 2, 3, 5, 6, 8, 9. The task has to be done in less than or 100 minutes and the route with less cost gets better score. 
+
+In the sample output 3 delivery boys were used and their routes are listed one after another. Time taken is 87 minutes which is less than 100 minutes and this route incurs a cost of $3110.
+
+Scoring:
+
+This is again an approximate algorithm problem and your score depends on the cost spent to deliver the goods. Lower the cost, higher the score. 
+
+NOTE: Compile & Test won't work for approximate algorithm problems. Please submit your answers directly.

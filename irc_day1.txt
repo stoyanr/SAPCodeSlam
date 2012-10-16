@@ -1,0 +1,753 @@
+[11:52] == stoyanr [5e1a2f02@gateway/web/freenode/ip.94.26.47.2] has joined #codesprint
+[11:52] == vivmbbs [~vivmbbs@c-71-204-170-75.hsd1.ca.comcast.net] has quit [Quit: This computer has gone to sleep]
+[11:55] == emadshaaban [~emad@41.153.236.251] has joined #codesprint
+[11:56] <stoyanr> hi there, anybody figured out what "the vertical distances (y-distance) of the points from that line" means exactly?
+[11:57] <stoyanr> does it mean "the **sum** of the vertical distances" or "the vertical distance of **each point**"?
+[12:00] == gandalf [b6405e34@gateway/web/freenode/ip.182.64.94.52] has joined #codesprint
+[12:00] == ohluyao [b4a00907@gateway/web/freenode/ip.180.160.9.7] has quit [Quit: Page closed]
+[12:01] == gandalf [b6405e34@gateway/web/freenode/ip.182.64.94.52] has quit [Client Quit]
+[12:04] <acb> Than what is the vertival distance between points (1,2) and (4,6) as given in the problem?
+[12:06] == z4nt4 [adb74b31@gateway/web/freenode/ip.173.183.75.49] has joined #codesprint
+[12:07] <acb> Any moderator here
+[12:07] <acb> ?
+[12:07] <z4nt4> HI there, I just wanted to ask a question about the Stock Analysis question for the code slam. Are we given inputs in sorted (increasing) order, and guaranteed to have all days given a value? So if N is a value of 100, should we expect the pairs to go from (1, y1).... (100, y100)?
+[12:09] == holdyourcolour [458b138f@gateway/web/freenode/ip.69.139.19.143] has quit [Ping timeout: 245 seconds]
+[12:10] == devrajchouhan [3d0c0b46@gateway/web/freenode/ip.61.12.11.70] has quit [Ping timeout: 245 seconds]
+[12:10] == field_symbol [5f71ea62@gateway/web/freenode/ip.95.113.234.98] has quit [Ping timeout: 245 seconds]
+[12:11] == ravi [75c05bb3@gateway/web/freenode/ip.117.192.91.179] has joined #codesprint
+[12:11] == ravi [75c05bb3@gateway/web/freenode/ip.117.192.91.179] has quit [Client Quit]
+[12:11] == compass [c11ea410@gateway/web/freenode/ip.193.30.164.16] has joined #codesprint
+[12:11] == ravi [75c05bb3@gateway/web/freenode/ip.117.192.91.179] has joined #codesprint
+[12:11] == mdunicorn [bcf5b51a@gateway/web/freenode/ip.188.245.181.26] has quit [Ping timeout: 245 seconds]
+[12:11] <ravi> hello sir
+[12:11] <compass> Hello
+[12:12] <ravi> sir  i m getting proper output
+[12:12] <ravi> but its showing
+[12:12] <ravi> Expected Output [object Object]
+[12:12] <compass> same problem to me
+[12:12] <compass> in java
+[12:12] <ravi> i m doing in c++
+[12:13] == chris___ [4fcee176@gateway/web/freenode/ip.79.206.225.118] has joined #codesprint
+[12:13] <ravi> and moreover what should we get the expected output
+[12:13] <ravi> for the first question
+[12:13] == jana1 [83f6228b@gateway/web/freenode/ip.131.246.34.139] has joined #codesprint
+[12:13] <ravi> in any case its showing Expected Output [object Object]
+[12:14] == chris___ [4fcee176@gateway/web/freenode/ip.79.206.225.118] has quit [Client Quit]
+[12:17] <inf_> ravi check the very last line of the problem description
+[12:19] <ravi> got the solution
+[12:19] <ravi>  This is again an approximate algorithm problem and your score depends on the cost spent to deliver the goods. Lower the cost, higher the score.   NOTE: Compile & Test won't work for approximate algorithm problems. Please submit your answers directly.
+[12:22] <inf_> yep, so just submit your answer and see what comes out
+[12:22] == lyuboslav_neshev [4f643e7c@gateway/web/freenode/ip.79.100.62.124] has joined #codesprint
+[12:22] <acb> whats the vertical distance between (1,2) -> (4,6) and what is the purpose of D?
+[12:23] <acb> hey i am getting _tchar not declared error
+[12:23] <acb> ?
+[12:23] <acb> should i include #include<stadfx.h> or not?
+[12:25] <acb> ?
+[12:29] <lyuboslav_neshev> Wtf is this scoring system?! The hacker on first place did't solved any problems and submitted 12 times, but there are many others that solved a task with 1 or 2 submitions?!?
+[12:29] == botB [c1ae191c@gateway/web/freenode/ip.193.174.25.28] has quit [Ping timeout: 245 seconds]
+[12:30] <lyuboslav_neshev> Why they don't take the first places?
+[12:30] <ravi> can we submit the progrm more dn once?
+[12:30] <inf_> lyuboslav_neshev aye I'm curious about that aswell
+[12:32] == senthil115 [dfbb6c18@gateway/web/freenode/ip.223.187.108.24] has quit [Quit: Page closed]
+[12:32] <pbl64k> 'solved' means you've 'passed' all the cases
+[12:32] <pbl64k> which means your solution is 'valid' in some sense, but that doesn't mean you've scored any points
+[12:33] <pbl64k> you get 1/(L - 1) on SA
+[12:33] <pbl64k> so you could get a 'correct' solution consisting of Nbig line segments, which would be 0.00 points when rounded to two significant digits
+[12:33] <pbl64k> ...which is apparently what's happening to my solution
+[12:36] <emadshaaban> Can we assume that the input is always sorted ?
+[12:36] == pedrosorio [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has joined #codesprint
+[12:36] <lyuboslav_neshev> no
+[12:37] <emadshaaban> i mean sorted by x
+[12:37] <pbl64k> hey pedrosorio
+[12:37] <emadshaaban> like the example
+[12:38] <pedrosorio> hi
+[12:38] <polkabot> eh oh
+[12:38] <pedrosorio> in the stock analysis problem are the prices consecutive?
+[12:38] == marjan [4d1ccee8@gateway/web/freenode/ip.77.28.206.232] has joined #codesprint
+[12:38] <pedrosorio> (1,2,3,...,etc.?)
+[12:39] == TommyA [8d59e295@gateway/web/freenode/ip.141.89.226.149] has joined #codesprint
+[12:40] == vntyadav [0e8bc402@gateway/web/freenode/ip.14.139.196.2] has joined #codesprint
+[12:41] == hans999 [5f71ea62@gateway/web/freenode/ip.95.113.234.98] has joined #codesprint
+[12:42] <TommyA> stock analysis: is it right that you get a score for a formally correct solution, but it is not regarded as solved, because the lines do not represent the trend?
+[12:43] <TommyA> nvm
+[12:45] == botB [c1ae191c@gateway/web/freenode/ip.193.174.25.28] has joined #codesprint
+[12:47] <acb> i got same output as written in question but when i compile this then it is written on expected out put [object object]
+[12:48] <botB> what is meaning of vertical distance Y? e.g. (1,2) -> (4,6) in this case: is it 4 or not?
+[12:49] == saschakiefer [9b3844d9@gateway/web/freenode/ip.155.56.68.217] has joined #codesprint
+[12:52] <acb> yeah it is 4
+[12:52] == botB [c1ae191c@gateway/web/freenode/ip.193.174.25.28] has quit [Ping timeout: 245 seconds]
+[12:55] == vntyadav [0e8bc402@gateway/web/freenode/ip.14.139.196.2] has quit [Quit: Page closed]
+[12:55] == pedrosorio [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has quit [Quit: Page closed]
+[13:07] == pedrosorio [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has joined #codesprint
+[13:11] == inf_ [2ef611fe@gateway/web/freenode/ip.46.246.17.254] has quit [Ping timeout: 245 seconds]
+[13:13] == inf_ [2ef615f5@gateway/web/freenode/ip.46.246.21.245] has joined #codesprint
+[13:13] == emadshaaban [~emad@41.153.236.251] has quit [Ping timeout: 245 seconds]
+[13:16] == bavario [83f6e3ac@gateway/web/freenode/ip.131.246.227.172] has joined #codesprint
+[13:19] == TommyA [8d59e295@gateway/web/freenode/ip.141.89.226.149] has quit [Ping timeout: 245 seconds]
+[13:23] == asdfgh [0e8b55cd@gateway/web/freenode/ip.14.139.85.205] has quit [Quit: Page closed]
+[13:31] == schoi [800ca978@gateway/web/freenode/ip.128.12.169.120] has quit [Quit: Page closed]
+[13:33] == svenor [5dda6f83@gateway/web/freenode/ip.93.218.111.131] has joined #codesprint
+[13:33] == emadshaaban [~emad@197.121.146.152] has joined #codesprint
+[13:35] <z4nt4> Hey can anyone answer this...
+[13:35] <z4nt4> if our line is supposed to be less than height D = 3
+[13:35] <z4nt4> However for same D it can be done using three lines too. (1, 2) -> (5, 6), (5, 6)->(8, 3), and (8, 3)->(10, 3).
+[13:36] <z4nt4> then for the given line segments above
+[13:36] <z4nt4> how is (1, 2) -> (5, 6) have a y-height of less than 3?
+[13:36] <z4nt4> 6 - 2 = 4...
+[13:38] <acb> ]our task to find minimum number of line segments
+[13:38] <z4nt4> yeah, I understand that
+[13:38] == Steve__ [4b5e8941@gateway/web/freenode/ip.75.94.137.65] has quit [Ping timeout: 245 seconds]
+[13:38] <acb> i am also confused in this question
+[13:39] <z4nt4> but what does A line segment is said to represent a set of prices for some consecutive days if the vertical distances (y-distance) of the points from that line is less than a given parameter D.
+[13:39] <z4nt4> really mean
+[13:39] <acb> and didnt get any answer yet
+[13:39] <z4nt4> if the vertical distances of the points from that line is less than the given parameter D... hmm
+[13:39] == segi [0e8bc405@gateway/web/freenode/ip.14.139.196.5] has joined #codesprint
+[13:39] <z4nt4> so the distances between EACH point?
+[13:39] <acb> This question is got alot of ambiguity
+[13:39] <z4nt4> no kidding..
+[13:39] <acb> and no one is trying to help
+[13:42] <saschakiefer> it's not about the difference between the y-value of both points, but the y distance between the point and the line. The challange says "vertical distances (y-distance) of the points from THAT line". It's the y-distance from the point to the line.
+[13:42] == segi [0e8bc405@gateway/web/freenode/ip.14.139.196.5] has quit [Client Quit]
+[13:43] <saschakiefer> that's the way we interpreted it...
+[13:43] == bobche [9b3844d7@gateway/web/freenode/ip.155.56.68.215] has joined #codesprint
+[13:44] == emadshaaban [~emad@197.121.146.152] has quit [Ping timeout: 252 seconds]
+[13:44] <bobche> Hi from Sofia!
+[13:44] <acb> how we get this distance from line
+[13:44] <acb> ?
+[13:44] <bobche> How is it going on your events?
+[13:45] <z4nt4> saschakiefer: I understand now! thanks!
+[13:46] <acb> i need a little bit explanation
+[13:46] <acb> please
+[13:47] <acb> of the distance of line from point
+[13:47] <z4nt4> It's the ydistance between the line and the point, not one point to another
+[13:48] <acb> ydistance in line is also changing
+[13:52] == emadshaaban [~emad@197.195.152.120] has joined #codesprint
+[13:52] == acb [3275384f@gateway/web/freenode/ip.50.117.56.79] has quit [Ping timeout: 245 seconds]
+[13:54] == ravi [75c05bb3@gateway/web/freenode/ip.117.192.91.179] has quit [Ping timeout: 245 seconds]
+[13:55] == mdunicorn [bcf5b51a@gateway/web/freenode/ip.188.245.181.26] has joined #codesprint
+[13:57] <mdunicorn> @z4nt4 did you get any answer about order of the days? I've disconnected from the chat for a while and couldn't see the rest.
+[13:59] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has joined #codesprint
+[13:59] <vemtaai> Hi all
+[13:59] <contradictioned> has anybody get a correct answer with ruby?
+[13:59] == pedrosorio_ [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has joined #codesprint
+[13:59] <contradictioned> i think it might be broken...
+[14:00] == pedrosorio [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has quit [Ping timeout: 245 seconds]
+[14:01] <vemtaai> If GCCs compile message is "" does that mean it compiled correctly?
+[14:02] == hans999 [5f71ea62@gateway/web/freenode/ip.95.113.234.98] has quit [Ping timeout: 245 seconds]
+[14:04] == dada [7aa8aba7@gateway/web/freenode/ip.122.168.171.167] has joined #codesprint
+[14:06] == dada [7aa8aba7@gateway/web/freenode/ip.122.168.171.167] has quit [Client Quit]
+[14:09] == Mun [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has joined #codesprint
+[14:11] == UnsoundMind [603168c8@gateway/web/freenode/ip.96.49.104.200] has joined #codesprint
+[14:16] <contradictioned> vemtaai: does the webside provide you more details?
+[14:16] <contradictioned> because i get the same for ruby and no further information weather some tests are passed..
+[14:16] <vemtaai> nothing, just that the compile message was ""
+[14:16] <vemtaai> but under activity, it says wrong answer 2/4
+[14:16] == z4nt4 [adb74b31@gateway/web/freenode/ip.173.183.75.49] has quit [Quit: Page closed]
+[14:20] == ber [5062a89a@gateway/web/freenode/ip.80.98.168.154] has joined #codesprint
+[14:20] == ber [5062a89a@gateway/web/freenode/ip.80.98.168.154] has quit [Client Quit]
+[14:24] == mdunicorn [bcf5b51a@gateway/web/freenode/ip.188.245.181.26] has quit [Ping timeout: 245 seconds]
+[14:25] == kkush33 [73f9822d@gateway/web/freenode/ip.115.249.130.45] has joined #codesprint
+[14:26] == kkush33 [73f9822d@gateway/web/freenode/ip.115.249.130.45] has quit [Client Quit]
+[14:27] == Mun [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has quit [Quit: Page closed]
+[14:28] == fdbf [0e8bc405@gateway/web/freenode/ip.14.139.196.5] has joined #codesprint
+[14:29] <fdbf> What does [obj][obj] mean ?
+[14:29] == TommyA [8d59e295@gateway/web/freenode/ip.141.89.226.149] has joined #codesprint
+[14:31] == CodemasterB [5ce31d26@gateway/web/freenode/ip.92.227.29.38] has joined #codesprint
+[14:31] == fdbf [0e8bc405@gateway/web/freenode/ip.14.139.196.5] has quit [Client Quit]
+[14:32] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has quit [Ping timeout: 245 seconds]
+[14:33] == ted_ [603160bc@gateway/web/freenode/ip.96.49.96.188] has joined #codesprint
+[14:35] == TommyA [8d59e295@gateway/web/freenode/ip.141.89.226.149] has quit [Ping timeout: 245 seconds]
+[14:38] <contradictioned> would be nive if we had real sized test data...
+[14:39] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has joined #codesprint
+[14:41] <vemtaai> I've had a submission in queue for 11 minutes now, anyone else submissions not getting through?
+[14:42] == CodemasterB [5ce31d26@gateway/web/freenode/ip.92.227.29.38] has quit [Quit: Page closed]
+[14:46] == Kamron [75cca7ec@gateway/web/freenode/ip.117.204.167.236] has joined #codesprint
+[14:46] <Kamron> Hi Guys
+[14:46] == kkush33 [73f9822d@gateway/web/freenode/ip.115.249.130.45] has joined #codesprint
+[14:47] == UnsoundMind [603168c8@gateway/web/freenode/ip.96.49.104.200] has quit [Quit: Page closed]
+[14:47] == ted_ [603160bc@gateway/web/freenode/ip.96.49.96.188] has quit [Quit: Page closed]
+[14:49] <kkush33> @admin- In the stock problem it says A line segment is said to represent a set of prices for some consecutive days if the vertical distances (y-distance) of the points from that line is less than a given parameter D.Plese confirm is it less than or less than equal to D.
+[14:52] == mj [b4953e34@gateway/web/freenode/ip.180.149.62.52] has joined #codesprint
+[14:52] <mj> hi
+[14:52] == mj has changed nick to Guest68259
+[14:53] <Guest68259> in problem "Stock Analysis", is the input is sorted based on days or not ?
+[15:00] == coeus [~coeus@static-213-182-108-092-teleos.ewe-ip-backbone.de] has joined #codesprint
+[15:04] == ChrisOelmueller [~eoc@2a01:238:42b6:4400:f140:fff4:e413:e393] has joined #codesprint
+[15:06] == g4ur4v_ [7bee814c@gateway/web/freenode/ip.123.238.129.76] has joined #codesprint
+[15:06] <g4ur4v_> hi
+[15:06] <g4ur4v_> In Stock Analysis
+[15:07] == z4nt4 [adb74b31@gateway/web/freenode/ip.173.183.75.49] has joined #codesprint
+[15:07] <g4ur4v_> what does score=0 mean
+[15:07] <g4ur4v_> score can never be 0 right ?
+[15:07] == mu [51a1f230@gateway/web/freenode/ip.81.161.242.48] has joined #codesprint
+[15:07] <pedrosorio_> g4ur4v_ if you don't return a valid output it probably is 0
+[15:07] <z4nt4> Does anyone have a reason why the first test case of the stock question can't have a result of 3 1 2 6 5 10 3?
+[15:08] <z4nt4> it fulfills the requirements stated as far as I can tell
+[15:08] <pedrosorio_> 3 1?
+[15:08] <pedrosorio_> ah
+[15:08] <pedrosorio_> sorry
+[15:08] <z4nt4> 3 output,   then (1,2) -> (6,5), and (6,5) -> (10,3)
+[15:09] <z4nt4> oh wait i think i just answered my own question
+[15:09] <g4ur4v_> @z4nt4 even your output is correct
+[15:09] <z4nt4> hahaha
+[15:09] <z4nt4> i got it :S
+[15:09] <z4nt4> stupid mistake
+[15:09] == coeus_ [~coeus@static-213-182-123-207-teleos.ewe-ip-backbone.de] has joined #codesprint
+[15:10] == Bratkov [51a1f230@gateway/web/freenode/ip.81.161.242.48] has joined #codesprint
+[15:10] == hans999 [5f71ea62@gateway/web/freenode/ip.95.113.234.98] has joined #codesprint
+[15:11] <g4ur4v_> even 3 1 2 3 4 10 3 is correct output
+[15:11] <z4nt4> yeah my mistake was the damn number above it haha
+[15:11] <z4nt4> the number of lines
+[15:11] <z4nt4> off by one error..
+[15:11] == coeus [~coeus@static-213-182-108-092-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 260 seconds]
+[15:12] <Bratkov> Can anybody tell me what does this mean: "/run-1350130128-1451547331/solution.c: In function \u2018main\u2019:\n/run-1350130128-1451547331/solution.c:16:8: warning: ignoring return value of \u2018scanf\u2019, declared with attribute warn_unused_result [-Wunused-result]\n/run-1350130128-1451547331/solution.c:21:9: warning: ignoring return value of \u2018scanf\u2019, declared with attribute warn_unused_result [-Wunused-result]\n/ru
+[15:12] <z4nt4> that's just a compiler warning
+[15:12] <Bratkov> I tried to submit, but every time i get score 0 and this message
+[15:13] <Bratkov> although my output is 3 1 2 3 4 10 3
+[15:13] <g4ur4v_> same case here
+[15:14] <z4nt4> is the Score associated with our profile slow to update?
+[15:14] <z4nt4> I just got a result of Score: 1.01754
+[15:14] <z4nt4> for my submission
+[15:14] <z4nt4> but on my profile my score is still 0
+[15:14] <g4ur4v_> good for u
+[15:14] <g4ur4v_> :P
+[15:15] <z4nt4> haha sorry i'm not meaning to brag, im just wondering if there's something wrong with the score updating
+[15:15] <z4nt4> plus maximum score is 5
+[15:15] <z4nt4> i'm quite a ways off.. haha
+[15:16] <g4ur4v_> does interviewstreet release editorials ...etc on the problems once the contest is over ?
+[15:16] == kkush33 [73f9822d@gateway/web/freenode/ip.115.249.130.45] has quit [Quit: Page closed]
+[15:16] == svenor [5dda6f83@gateway/web/freenode/ip.93.218.111.131] has quit [Ping timeout: 245 seconds]
+[15:19] <z4nt4> ahh there it updated
+[15:21] == coius__ [~coeus@static-213-182-110-189-teleos.ewe-ip-backbone.de] has joined #codesprint
+[15:24] == bobche [9b3844d7@gateway/web/freenode/ip.155.56.68.215] has quit [Ping timeout: 245 seconds]
+[15:24] == coeus_ [~coeus@static-213-182-123-207-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 260 seconds]
+[15:29] == Robsdedude [83f625fb@gateway/web/freenode/ip.131.246.37.251] has joined #codesprint
+[15:29] <Robsdedude> hi
+[15:29] <polkabot> bonjour
+[15:30] <Robsdedude> i've got a prob with submitting my python code...
+[15:30] <Robsdedude> can anyone help me?
+[15:32] == from_ashes [1b0748b3@gateway/web/freenode/ip.27.7.72.179] has joined #codesprint
+[15:33] <from_ashes> ??
+[15:35] <Robsdedude> it's about an approximate algorithm question... it always says "wrong answer" but submitting the code as ruby (even though it's py code) it says like well done but score is still 0
+[15:35] <z4nt4> socre is 0 is probably because your output is incorrect
+[15:36] <Robsdedude> it can't be that incorrect...
+[15:36] <Robsdedude> and why does it take ruby than?
+[15:36] <Robsdedude> *then?
+[15:36] == akshay_ [~akshay@122.178.234.103] has joined #codesprint
+[15:37] == akshay [~akshay@122.178.234.103] has quit [Read error: Connection reset by peer]
+[15:37] <Robsdedude> could it be that the system expects a linebreak at the end of the output?
+[15:38] == coeus_ [~coeus@static-213-182-127-194-teleos.ewe-ip-backbone.de] has joined #codesprint
+[15:38] == mu [51a1f230@gateway/web/freenode/ip.81.161.242.48] has quit [Ping timeout: 245 seconds]
+[15:38] <z4nt4> i dont think my code has a line break at the end of the output
+[15:39] == amit190192 [0e8be20b@gateway/web/freenode/ip.14.139.226.11] has joined #codesprint
+[15:40] == coius__ [~coeus@static-213-182-110-189-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 244 seconds]
+[15:40] <amit190192> in compile test for java it is showing expected output as [object Object]
+[15:41] <amit190192> whats the problem
+[15:41] <Bratkov> same for c and c++
+[15:42] <Robsdedude> also for python and ruby
+[15:42] <Robsdedude> think is just bad js...
+[15:43] <Bratkov> did you get 0 score when you submit?
+[15:43] <vemtaai> in stock analysis, why is the trivial solution (output == input) not accepted?
+[15:43] <Robsdedude> cuz it sux?
+[15:43] <z4nt4> because maybe the 5 test cases don't include the sample one
+[15:44] <vemtaai> I mean, if I take n points, and just output them as-is, why is only 2/4 test cases accepted?
+[15:45] == coius_ [~coeus@static-213-182-120-251-teleos.ewe-ip-backbone.de] has joined #codesprint
+[15:45] <Guest68259> in stock analysis, what does score=0 mean ?
+[15:45] <z4nt4> because it's looking for the minimum amount of lines
+[15:46] == vivmbbs [~vivmbbs@c-71-204-170-75.hsd1.ca.comcast.net] has joined #codesprint
+[15:46] == mode/#codesprint [+o vivmbbs] by ChanServ
+[15:46] <vemtaai> yes but it's still a valid solution, just not a very good one.
+[15:46] <z4nt4> hey does the stock analysis really have a max score of 5?
+[15:47] <z4nt4> Score = 1/(L-1)
+[15:47] <z4nt4> with 5 test cases
+[15:47] <vemtaai> in activity it always says 2/4 or 3/4
+[15:47] == Silke_ [9b3844d9@gateway/web/freenode/ip.155.56.68.217] has joined #codesprint
+[15:47] <vemtaai> so if there are 5 test cases, what is the 4?
+[15:48] == coeus_ [~coeus@static-213-182-127-194-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 272 seconds]
+[15:48] <z4nt4> i'm not sure.. that doesn't add up
+[15:48] == Silke_ [9b3844d9@gateway/web/freenode/ip.155.56.68.217] has quit [Client Quit]
+[15:51] == compass [c11ea410@gateway/web/freenode/ip.193.30.164.16] has quit [Ping timeout: 245 seconds]
+[15:51] <contradictioned> i think the balloon means, everything is right - then: why don't i have points or scores
+[15:52] <z4nt4> is there any way to see how many test cases you passed or failed other than spamming the activity page?
+[15:52] <vemtaai> I don't see any
+[15:52] == todor_bonchev [52894824@gateway/web/freenode/ip.82.137.72.36] has joined #codesprint
+[15:53] <todor_bonchev> In order to have more than 0.0 score in stock analysis do you have to make optimal solutions?
+[15:53] <vemtaai> score is given as 1/(L-1)
+[15:53] <contradictioned> should be pretty good i think :)
+[15:54] <z4nt4> well i got 1.01754, i guess that means i got like
+[15:54] <todor_bonchev> but i have some solution and it says processed and score 0
+[15:54] <contradictioned> and a trivial solution (return the input graph) gets 0/4 tests passed but a score of 0.1
+[15:54] <todor_bonchev> is it because my logic is false
+[15:54] <z4nt4> i guess that means i got like.. 1/2,  1/2,  1/57
+[15:54] <z4nt4> todor_bonchev: most likely
+[15:57] == R0mai [bc06c5b3@gateway/web/freenode/ip.188.6.197.179] has joined #codesprint
+[15:58] == ngocanh [82537123@gateway/web/freenode/ip.130.83.113.35] has joined #codesprint
+[15:58] == g4ur4v_ [7bee814c@gateway/web/freenode/ip.123.238.129.76] has quit [Quit: Page closed]
+[15:58] == jefri [5ce4f590@gateway/web/freenode/ip.92.228.245.144] has joined #codesprint
+[15:59] == vemtaai_ [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has joined #codesprint
+[16:02] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has quit [Ping timeout: 245 seconds]
+[16:02] <ngocanh> i got compile message "" does that mean successfully compiled?
+[16:03] <@vivmbbs> yes
+[16:03] <@vivmbbs> there's no compilation error
+[16:04] <todor_bonchev> i tried even with trivial solution (n lines) and it says again 0 score what is wrong? maybe output form? or it is suposed to do like that for trivial?
+[16:08] <vemtaai_> trivial solution fails one of the test cases in stock analysis, I have no idea why
+[16:10] == qwebirc185297 [4f643e7c@gateway/web/freenode/ip.79.100.62.124] has joined #codesprint
+[16:11] == lyuboslav_neshev [4f643e7c@gateway/web/freenode/ip.79.100.62.124] has quit [Ping timeout: 245 seconds]
+[16:11] <z4nt4> does anyone know if its significant in the stock analysis graph that the last 'trend' is made up of 3 points, while the first flat 'trend' (at x = 4 and x = 5) is made up of 2 points?
+[16:11] == coius_ [~coeus@static-213-182-120-251-teleos.ewe-ip-backbone.de] has quit [Read error: Connection reset by peer]
+[16:11] <z4nt4> why is x = 4, x =5 not considered a 'trend' when the last 3 points are?
+[16:13] == Bratkov [51a1f230@gateway/web/freenode/ip.81.161.242.48] has quit [Quit: Page closed]
+[16:13] == amit190192 [0e8be20b@gateway/web/freenode/ip.14.139.226.11] has quit [Quit: Page closed]
+[16:13] <contradictioned> okay.. that's all crap :\
+[16:15] == gpsinghsandhu1 [3bb22ff8@gateway/web/freenode/ip.59.178.47.248] has joined #codesprint
+[16:18] <todor_bonchev> 3 1 2 6 5 10 3 is this possible solution for test case?
+[16:18] <gpsinghsandhu1> if i understand it correctly the in stock analysis problem the eample test case can be solved using 2 line segments --   (1,2)->(5,6) & (5,6)->(10,3)
+[16:18] <pedrosorio_> todor_bonchev nope
+[16:19] <z4nt4> gpsinghsandhu1: but according to https://sap.interviewstreet.com/challenges/dashboard/#discuss/question/40/Requirements-of-line-segments there's more to this question than we're being told
+[16:19] <z4nt4> we have to predict some 'trend' but nobody knows how to define a trend
+[16:19] <pedrosorio_> todor_bonchev your first line has an absolute deviation greater than 3
+[16:20] <pedrosorio_> z4nt4 I believe the challenge is mathematically well-posed
+[16:20] == todor_bonchev [52894824@gateway/web/freenode/ip.82.137.72.36] has quit [Quit: Page closed]
+[16:20] <pedrosorio_> actually the statement could be modified to say
+[16:20] <pedrosorio_> instead of
+[16:20] <pedrosorio_> "A line segment is said to represent a set of prices for some consecutive days if the vertical distances (y-distance) of the points from that line is less than a given parameter D."
+[16:20] <gpsinghsandhu1> ok the distances need to be added for individual points
+[16:21] == todor_bonchev [52894826@gateway/web/freenode/ip.82.137.72.38] has joined #codesprint
+[16:21] <pedrosorio_> (...) if the SUM of the vertical distances of the points (...)
+[16:21] <z4nt4> ... really?
+[16:21] <z4nt4> wow
+[16:22] <pedrosorio_> z4nt4, yep simple linear regression that's all you are required to do
+[16:22] <pedrosorio_> the most common metric is the sum of the squared distances
+[16:22] <z4nt4> I was comparing each point's y value against the line's y value for that particular X position
+[16:22] <pedrosorio_> in this case it's the sum of the absolute deviations, that's all
+[16:23] <z4nt4> so for (3, 4), i would compare 4 against the y value of my line at y = 3
+[16:23] <pedrosorio_> at x=3*
+[16:23] <z4nt4> right
+[16:23] <z4nt4> so you're saying we're supposed to SUM all of the distances?
+[16:23] <pedrosorio_> yep, do that, but sum all the distances
+[16:23] <z4nt4> alright...
+[16:23] <pedrosorio_> z4nt4, that's fairly clear from the example case, I believe
+[16:24] <pedrosorio_> although it should be stated in the problem
+[16:24] == compass [c11ea410@gateway/web/freenode/ip.193.30.164.16] has joined #codesprint
+[16:24] <pedrosorio_> I agree
+[16:24] <todor_bonchev> sum all the distances in one line must be less than D or of all lines?
+[16:24] <z4nt4> in one line I imagine
+[16:24] <pedrosorio_> sum of all the distances for each line
+[16:24] <pedrosorio_> must be less than D
+[16:24] <todor_bonchev> thanks
+[16:26] == Guest68259 [b4953e34@gateway/web/freenode/ip.180.149.62.52] has quit [Quit: Page closed]
+[16:26] <z4nt4> is the minimum number of lines for the example test case 2 or 3 then?
+[16:26] <@vivmbbs> hey guys
+[16:26] <z4nt4> (if we're summing distances)
+[16:26] <@vivmbbs> can you ping me with your queries?
+[16:27] == patrox [74cbb723@gateway/web/freenode/ip.116.203.183.35] has joined #codesprint
+[16:27] == antonius [4f649487@gateway/web/freenode/ip.79.100.148.135] has joined #codesprint
+[16:27] == coius_ [~coeus@static-213-182-106-117-teleos.ewe-ip-backbone.de] has joined #codesprint
+[16:28] == antonius [4f649487@gateway/web/freenode/ip.79.100.148.135] has quit [Client Quit]
+[16:28] == patrox [74cbb723@gateway/web/freenode/ip.116.203.183.35] has quit [Client Quit]
+[16:28] <todor_bonchev> well, i tried with sum of each line but again 0.00. Is 4 (1 2) -> (5 6) -> (9 3) -> (10 3) correct?
+[16:28] <pedrosorio_> vivmbbs we're saying too much "in public"?
+[16:28] <pedrosorio_> sorry, if that's the case
+[16:28] <@vivmbbs> nope
+[16:28] <@vivmbbs> if you had some concerns/queries with the question, happy to answer
+[16:29] <pedrosorio_> I think there's a misunderstanding about the meaning of parameter D
+[16:29] <z4nt4> haha i agree
+[16:29] <pedrosorio_> judging by what people are writing here
+[16:29] <vemtaai_> indeed
+[16:29] <@vivmbbs> what's the misunderstanding
+[16:29] <pedrosorio_> the *sum* of y-distances for all points in a line, must be smaller than D
+[16:30] <pedrosorio_> OR
+[16:30] <pedrosorio_> each y-distance must be smaller than D
+[16:30] <pedrosorio_> ?
+[16:30] <z4nt4> yeah... that's the big question
+[16:30] <pedrosorio_> (I believe it's the former, but it's not absolutely clear from the problem statement)
+[16:31] <z4nt4> I was under the impression that this line is a sort of best-fit line, so as long as all points are within D units y of the line, then it would be okay... but with that I can only get 1.02 score
+[16:31] <@vivmbbs> each should be less than D
+[16:31] <@vivmbbs> i'll update the problem statement as well
+[16:31] <z4nt4> if that's the case, then can you clear up what you mean about "trends"
+[16:32] <R0mai> Either way, the original function as the approximation should be a correct answer (albeit for a low score). right?
+[16:32] <vemtaai_> also, why is the trivial solution (ie. output the original) only accepted in 2/4 testcases?
+[16:33] <@vivmbbs> because there are a number of different test-cases for the problem
+[16:33] <@vivmbbs> and it's not necessary that the hidden test-cases are sample test-cases as well
+[16:33] <z4nt4> if we're not meant to just describe the example case with an upwards spike, then a downwards spike, what makes the last 3 flat points form a trend in the example, whereas the first pair of flat points at x = 4 and x = 5 do not form a trend
+[16:34] <z4nt4> basically, why must the example case use 3 lines rather than just 2, if we only follow the restriction of D
+[16:34] == hari_ [~hari@122.178.252.137] has joined #codesprint
+[16:34] <@vivmbbs> clarifying..
+[16:34] <@vivmbbs> 1s
+[16:34] <R0mai> of course not. I didn't mean to output the sample testcase as a solution. I meant outputting the same function as we get for input
+[16:38] <vemtaai_> also, can we clarify how many testcases there are in stock analysis? the task description says 5, but the activity page says 4
+[16:40] == from_ashes [1b0748b3@gateway/web/freenode/ip.27.7.72.179] has quit [Ping timeout: 245 seconds]
+[16:40] <@vivmbbs> z4nt4, yes you can. If you obey the 'D" constraint
+[16:40] <z4nt4> we can just use 2 lines?
+[16:41] <@vivmbbs> can you tell me what are the 2 lines?
+[16:41] <z4nt4> 2 1 2 6 5 10 3
+[16:41] <z4nt4> that's my output
+[16:41] <@vivmbbs> it's 4 hidden test-cases
+[16:41] <z4nt4> got 1.01754 score, which means i probably got  1 / 2 + 1 / 2 + 1 / 57
+[16:43] <@vivmbbs> checking
+[16:44] <z4nt4> the problem is that the distance from the line to 7, 4 is exactly 3
+[16:44] <z4nt4> and D = 3
+[16:44] <z4nt4> so we have to stay less than D, so that one fails
+[16:46] <R0mai> are there special TCs, like with N=0 or N=1 ?
+[16:46] <@vivmbbs> yes, that's correct z4nt4 - it's a valid solution
+[16:46] <z4nt4> alright, thanks for verifying that
+[16:46] <R0mai> the problem doesn't exactly specify what should be the output for those special cases.
+[16:47] <@vivmbbs> there won't be those cases
+[16:48] <R0mai> thank you
+[16:48] == Kamron [75cca7ec@gateway/web/freenode/ip.117.204.167.236] has quit [Quit: Page closed]
+[16:49] <vemtaai_> if for n input days, we output a line with n line segmetns (the trivial solution) that should pass all testcases right? (albeit with a rather low score..)
+[16:51] == pedrosorio [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has joined #codesprint
+[16:51] == pedrosorio_ [4fa92e4c@gateway/web/freenode/ip.79.169.46.76] has quit [Ping timeout: 245 seconds]
+[16:52] == saschakiefer [9b3844d9@gateway/web/freenode/ip.155.56.68.217] has quit [Quit: Page closed]
+[16:54] <ngocanh> can anyone tell me
+[16:54] <ngocanh> how can the travel time
+[16:54] <vemtaai_> if the answer involves details that you are not allowed to reveal, please say so
+[16:54] <ngocanh> by the initial solution
+[16:54] <ngocanh> be 87 minutes
+[16:54] <ngocanh> https://sap.interviewstreet.com/challenges/dashboard/#discuss/question/66/Travel-Time
+[16:54] == vemtaai_ [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has quit [Quit: Page closed]
+[16:55] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has joined #codesprint
+[16:56] <z4nt4> vivmbbs:  "The first line of output should contain L , L-1 is the number of representative lines. "
+[16:56] <z4nt4> should the first output line be L or L-1 then?
+[16:56] <z4nt4> since my output was 2 12 65 10 3
+[16:57] <z4nt4> but according to the problem statement it should actually be 3 1 2 6 5 10 3
+[16:57] <z4nt4> 2 vs 3 for the first line
+[16:57] <z4nt4> im pretty sure when I had the first line output as L, i got a score of 0
+[16:57] <R0mai> accordint to the example solution it should be 3
+[16:58] <todor_bonchev> there is something wrong with the system i got 0 score, then it jumps to 1.011,
+[16:58] <z4nt4> todor_bonchev:  that's just some delay i think
+[16:58] <@vivmbbs> todor_bonchev, there's a slight delay
+[16:59] <@vivmbbs> it should be 3
+[16:59] <z4nt4> alright i'll give that a shot
+[17:00] <z4nt4> haha
+[17:00] <z4nt4> i get exactly the same test cases incorrect
+[17:00] <vemtaai> :D
+[17:00] <z4nt4> with 2 or 3 as the first value
+[17:01] <todor_bonchev> it should be 3 but with 3 i got 1.02 score, and with 2 i got 0.00
+[17:02] <@vivmbbs> checking
+[17:02] <z4nt4> i guess to be fair I dont know which test cases i'm failing
+[17:02] <z4nt4> but I'm failing the same amount whether i output 2 or 3 as the first line
+[17:03] == iniajpcurry [a9910314@gateway/web/freenode/ip.169.145.3.20] has joined #codesprint
+[17:04] <@vivmbbs> checking
+[17:05] == Robsdedude [83f625fb@gateway/web/freenode/ip.131.246.37.251] has quit [Ping timeout: 245 seconds]
+[17:05] == iniajpcurry [a9910314@gateway/web/freenode/ip.169.145.3.20] has quit [Client Quit]
+[17:05] == Botbot_ [b4954e1a@gateway/web/freenode/ip.180.149.78.26] has joined #codesprint
+[17:07] == Pyranja [5471fec4@gateway/web/freenode/ip.84.113.254.196] has joined #codesprint
+[17:09] == blablabla [83f62096@gateway/web/freenode/ip.131.246.32.150] has joined #codesprint
+[17:09] * vivmbbs is writing an equation to verify the solution
+[17:10] <z4nt4> haha alright
+[17:10] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has joined #codesprint
+[17:10] == Artox [~Artox@2001:638:208:fd5f:e60:76ff:fe9d:b6f8] has joined #codesprint
+[17:11] == coeus_ [~coeus@static-213-182-104-187-teleos.ewe-ip-backbone.de] has joined #codesprint
+[17:11] <sidhant13> is the "score=1/L" also included in the output
+[17:11] <@vivmbbs> no
+[17:11] <@vivmbbs> can you please refresh the page?
+[17:11] <@vivmbbs> i've put up that statement below
+[17:12] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has quit [Client Quit]
+[17:12] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has joined #codesprint
+[17:13] <sidhant13> what is the output of the sample case given?
+[17:13] == coius_ [~coeus@static-213-182-106-117-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 245 seconds]
+[17:13] <sidhant13> for D=3, output according to me is not correct
+[17:15] <pedrosorio> score 0
+[17:15] <pedrosorio> hmmm
+[17:15] <z4nt4> refresh :)
+[17:16] <pedrosorio> z4nt4 refresh what?
+[17:16] <z4nt4> your submissions page
+[17:16] <z4nt4> still score 0?
+[17:16] <todor_bonchev> so we must write to the output L like is said in the statement and not L-1, cuz i get 1.02 points when i write L-1
+[17:17] <@vivmbbs> the first line is the number of points
+[17:17] <pedrosorio> yep still score 0
+[17:17] <@vivmbbs> if there are L points, there are L-1 lines
+[17:17] <@vivmbbs> and the score is 1/L-1
+[17:17] <@vivmbbs> pedrosorio, checking
+[17:17] <pedrosorio> I think the feedback in the activity page doesn't help a lot
+[17:17] <pedrosorio> it says 3/4
+[17:17] <sidhant13> Can anyone plz tell what shud be the output of sample case
+[17:17] * vivmbbs is checking the approximate algorithm checker. Request you to wait for 10-15 mins
+[17:18] <sidhant13> accroding to me it shud be
+[17:18] <sidhant13> 3
+[17:18] <sidhant13> 1 2
+[17:18] <sidhant13> 6 5
+[17:18] <sidhant13> 10 3
+[17:18] * vemtaai thanks vivmbbs' continued work in the matter
+[17:18] <sidhant13> but the test and run is showing the "wrong answer"
+[17:20] <pedrosorio> sidhant13 I think it's supposed to show wrong answer: "NOTE: Compile & Test won't work for approximate algorithm problems. Please submit your answers directly."
+[17:22] <pedrosorio> also, could you guys give us feedback on the scoring method for the truck delivery problem?
+[17:23] <@vivmbbs> what feedback would you like to have?
+[17:26] <@vivmbbs> z4nt4, pedrosorio and everyone else - can you please try submitting now?
+[17:27] <pedrosorio> the problem states that we should try to achieve the least cost
+[17:27] <blablabla> will there be any rejudge?
+[17:27] <pedrosorio> but it doesn't say what we can expect the score to be
+[17:27] <pedrosorio> (like max 5 in the case of the stock problem)
+[17:27] <z4nt4> resubmitted
+[17:27] <z4nt4> printing L,   2/4 cases
+[17:27] <blablabla> when the output checker is fully corrected?
+[17:28] <@vivmbbs> there's nothing to be rejudged. you can submit again
+[17:28] <@vivmbbs> pedrosorio, i don't think so. since even I don't know the optimal solution for the cost
+[17:29] <pedrosorio> vivmbbs, sure but the "good" scores for the delivery problem
+[17:29] <pedrosorio> are similar to the ones for the stock problem?
+[17:29] <R0mai> Then follows N-1 lines each containing 4 integers, x y d p [...]   : p is not an integer
+[17:30] <@vivmbbs> not sure
+[17:30] <@vivmbbs> R0mai, fixing
+[17:30] <R0mai> thanks
+[17:30] <pedrosorio> vivmbbs score 0 again
+[17:30] <pedrosorio> hmm
+[17:31] <@vivmbbs> pedrosorio, pvt chat?
+[17:31] == hans999 [5f71ea62@gateway/web/freenode/ip.95.113.234.98] has quit [Quit: Page closed]
+[17:32] <z4nt4> i guess that's enough for one night, not sure about the last two cases
+[17:32] <z4nt4> but it's 7:30am now so ill go crash
+[17:32] <z4nt4> thanks for the help vivmbbs
+[17:32] == coeus [~coeus@static-213-182-109-015-teleos.ewe-ip-backbone.de] has joined #codesprint
+[17:33] <@vivmbbs> thank you :)
+[17:33] <blablabla> what about the ones who submitted wrong solution (print out -1 or something like that) but gets points like 1.0 for stock analysis?
+[17:33] <@vivmbbs> who printed -1 and got a score?
+[17:33] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has quit [Ping timeout: 245 seconds]
+[17:34] <contradictioned> i put the 'tree' in 'interviewstreet
+[17:34] == pinguin [83f6213f@gateway/web/freenode/ip.131.246.33.63] has joined #codesprint
+[17:35] <z4nt4> ohh
+[17:35] <z4nt4> my score got worse now
+[17:35] <z4nt4> whatever you did vivmbbs .. haha
+[17:35] == coeus_ [~coeus@static-213-182-104-187-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 276 seconds]
+[17:35] <@vivmbbs> it's correct now :)
+[17:35] <jana1> contradictioned: circlefree!!!
+[17:36] <pedrosorio> I get 0.5
+[17:36] <pedrosorio> not great :P
+[17:36] <z4nt4> haha same
+[17:36] <contradictioned> contradictioned: ah thanks. that enlightened my whole process of... holistic.. stuff..
+[17:36] <blablabla> got 0.5 too
+[17:37] <@vivmbbs> yes
+[17:37] <contradictioned> jana1: holistic^^
+[17:37] <@vivmbbs> 1/(3-1)
+[17:37] <contradictioned> did you now 0.8 was an integer?
+[17:37] <jana1> contradictioned: for sure
+[17:37] <contradictioned> 4 is sure an integer ;)
+[17:37] <pedrosorio> vivmbbs yeah, but since the "best" would be 5
+[17:37] <pedrosorio> 0.5 is pretty bad
+[17:37] <pedrosorio> :P
+[17:37] <contradictioned> but 0.5 is an int anyway :)
+[17:38] <jana1> true story
+[17:38] <z4nt4> its actually  0.517241
+[17:39] <blablabla> z4nt4, I also got 0.517241 too
+[17:39] <z4nt4> so the first line is supposed to be L for sure right?
+[17:39] <@vivmbbs> Edited the problem statement of goods routing which previously read as x,y,d,p are integers.
+[17:39] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has joined #codesprint
+[17:39] <@vivmbbs> yes
+[17:39] <@vivmbbs> there are L points
+[17:39] <@vivmbbs> and L-1 lines
+[17:39] <@vivmbbs> that's how we can read your output
+[17:39] <sidhant13> my score is 0.51.. what does this mean?
+[17:40] <sidhant13> how it arrived at "0.51"
+[17:40] <z4nt4> sidhant13: it says at the bottom of the problem statement
+[17:40] <z4nt4> your score = 1 / (L-1)
+[17:40] == ngocanh [82537123@gateway/web/freenode/ip.130.83.113.35] has quit [Ping timeout: 245 seconds]
+[17:41] <sidhant13> what is l
+[17:41] <pedrosorio> sidhant13 the number of points you output
+[17:41] <z4nt4> The first line of output should contain L , L-1 is the number of representative lines. Next L lines should contain two integers, xi yi, each. For each i, such that 1 <= i < L, (xi, yi)->(xi+1, yi+1) is a representative line. x1 = 1, xL = N,  1 <= xi <= N.
+[17:41] <z4nt4> it's all on the problem statement
+[17:41] <z4nt4> anyway I'm going to sleep for now, thanks for the help guys
+[17:42] <@vivmbbs> good night :)
+[17:44] == dipsochelys [~benedict@2001:638:208:fd5f:212:f0ff:fe0c:a1f6] has joined #codesprint
+[17:46] <jana1> contradictioned: penis!
+[17:46] == coeus_ [~coeus@static-213-182-108-027-teleos.ewe-ip-backbone.de] has joined #codesprint
+[17:46] <contradictioned> jana1: penispenis!
+[17:47] <jana1> contradictioned: holisic penis!
+[17:50] == coeus [~coeus@static-213-182-109-015-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 255 seconds]
+[17:50] == pinguin [83f6213f@gateway/web/freenode/ip.131.246.33.63] has quit [Ping timeout: 245 seconds]
+[17:53] == ishaanmlhtr [73f20311@gateway/web/freenode/ip.115.242.3.17] has joined #codesprint
+[17:54] <ishaanmlhtr> hi, anyone here? Is there a problem with the scoring system?
+[17:55] == drouill8 [1839fb1b@gateway/web/freenode/ip.24.57.251.27] has joined #codesprint
+[17:55] <contradictioned> ishaanmlhtr: yap. on the "activity" page it's broken (according to our on site people), on "submissions" it's .. say la la
+[17:56] == Mun [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has joined #codesprint
+[17:57] <Mun> Hello
+[17:57] <polkabot> ni hao
+[17:57] <ishaanmlhtr> and what about the challenges page? I get the status as accepted on the challenges page too yet no increase in score.
+[17:57] <Mun> how to check distance
+[17:57] <Mun> what the heck
+[17:57] <Mun> please help me
+[17:57] <Mun> ?
+[17:59] <hari_> Mun, please wait for like 5minutes.
+[17:59] <hari_> The leaderboard updates every 5 minutes
+[18:01] <Mun> ok i am waiting
+[18:01] == todor_bonchev [52894826@gateway/web/freenode/ip.82.137.72.38] has quit [Ping timeout: 245 seconds]
+[18:01] <contradictioned> ishaanmlhtr: challenges page is also crappy..
+[18:01] <Mun> yeah it is
+[18:01] <ishaanmlhtr> alright thanks!
+[18:02] <Mun> Any one who has done stock challenge
+[18:02] <Mun> ?
+[18:02] == Artox [~Artox@2001:638:208:fd5f:e60:76ff:fe9d:b6f8] has quit [Quit: Konversation terminated!]
+[18:04] == blablabla [83f62096@gateway/web/freenode/ip.131.246.32.150] has quit [Ping timeout: 245 seconds]
+[18:04] == jana1 [83f6228b@gateway/web/freenode/ip.131.246.34.139] has quit [Ping timeout: 245 seconds]
+[18:07] == dipsochelys [~benedict@2001:638:208:fd5f:212:f0ff:fe0c:a1f6] has quit [Quit: Ex-Chat]
+[18:09] <drouill8> Is there a possible 1 or 2 line segment solution to the example in the Stock Analysis question
+[18:14] == hhj3809092jjkdk9 [b21a5be6@gateway/web/freenode/ip.178.26.91.230] has joined #codesprint
+[18:18] == Artox [~Artox@2001:638:208:d600:204:4bff:fe17:3a01] has joined #codesprint
+[18:19] == Botbot_ [b4954e1a@gateway/web/freenode/ip.180.149.78.26] has quit [Ping timeout: 245 seconds]
+[18:19] == drouill8 [1839fb1b@gateway/web/freenode/ip.24.57.251.27] has quit [Quit: Page closed]
+[18:22] == igemer [253135bc@gateway/web/freenode/ip.37.49.53.188] has joined #codesprint
+[18:23] == MaKoLine [9eb557b7@gateway/web/freenode/ip.158.181.87.183] has joined #codesprint
+[18:33] <R0mai> drouill18 : there is no TCs with zero or 1 line segment, according to vivmbbs
+[18:36] == coeus [~coeus@static-213-182-118-007-teleos.ewe-ip-backbone.de] has joined #codesprint
+[18:39] == coeus_ [~coeus@static-213-182-108-027-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 272 seconds]
+[18:41] <Mun> can any1 tell me whats the distance from line to point
+[18:41] <Mun> ?
+[18:42] == meseb [0ec286fc@gateway/web/freenode/ip.14.194.134.252] has joined #codesprint
+[18:42] <Artox> Mun you only need y-distance according to the problem description
+[18:43] <Mun> ydistance of 1 point to another?
+[18:43] <Artox> ydistance to the line
+[18:43] == sidhant13 [0e8bf3a2@gateway/web/freenode/ip.14.139.243.162] has quit [Quit: Page closed]
+[18:47] == coeus_ [~coeus@static-213-182-108-176-teleos.ewe-ip-backbone.de] has joined #codesprint
+[18:50] == meseb [0ec286fc@gateway/web/freenode/ip.14.194.134.252] has quit [Ping timeout: 245 seconds]
+[18:51] == coeus [~coeus@static-213-182-118-007-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 260 seconds]
+[19:01] == marjan [4d1ccee8@gateway/web/freenode/ip.77.28.206.232] has quit [Quit: Page closed]
+[19:02] == ishaanmlhtr [73f20311@gateway/web/freenode/ip.115.242.3.17] has quit [Quit: Page closed]
+[19:03] == BalaBarath [75d83bcf@gateway/web/freenode/ip.117.216.59.207] has joined #codesprint
+[19:08] == haoziyao [b4a00251@gateway/web/freenode/ip.180.160.2.81] has quit [Quit: Page closed]
+[19:10] == emadshaaban [~emad@197.195.152.120] has quit [Remote host closed the connection]
+[19:20] == coeus [~coeus@static-213-182-118-157-teleos.ewe-ip-backbone.de] has joined #codesprint
+[19:22] == coeus_ [~coeus@static-213-182-108-176-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 245 seconds]
+[19:27] <BalaBarath> in stock analysis problem, is the input will in the sorted order..?
+[19:29] == keas [4d0c3456@gateway/web/freenode/ip.77.12.52.86] has joined #codesprint
+[19:32] == gpsinghsandhu1 [3bb22ff8@gateway/web/freenode/ip.59.178.47.248] has quit [Quit: Page closed]
+[19:34] == Kamron [75cca7ec@gateway/web/freenode/ip.117.204.167.236] has joined #codesprint
+[19:34] == Kamron [75cca7ec@gateway/web/freenode/ip.117.204.167.236] has quit [Client Quit]
+[19:34] <Artox> BalaBarath: sorted?
+[19:34] == hari_ [~hari@122.178.252.137] has quit [Ping timeout: 260 seconds]
+[19:34] <Artox> good question
+[19:35] <@vivmbbs> not necessary
+[19:35] <@vivmbbs> dont assume
+[19:38] == vemtaai [5986a1e7@gateway/web/freenode/ip.89.134.161.231] has quit [Ping timeout: 245 seconds]
+[19:40] == BalaBarath [75d83bcf@gateway/web/freenode/ip.117.216.59.207] has quit [Ping timeout: 245 seconds]
+[19:43] == Pyranja [5471fec4@gateway/web/freenode/ip.84.113.254.196] has quit [Quit: Page closed]
+[19:48] == coeus_ [~coeus@static-213-182-116-248-teleos.ewe-ip-backbone.de] has joined #codesprint
+[19:49] == MaKoLine [9eb557b7@gateway/web/freenode/ip.158.181.87.183] has quit [Ping timeout: 245 seconds]
+[19:49] == igemer [253135bc@gateway/web/freenode/ip.37.49.53.188] has quit [Ping timeout: 245 seconds]
+[19:51] == coeus [~coeus@static-213-182-118-157-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 245 seconds]
+[19:55] == karan259 [dfecee8b@gateway/web/freenode/ip.223.236.238.139] has joined #codesprint
+[19:55] <karan259> is anyone doing the SAP Goods Routing problem coz i have a problem...
+[19:56] <Artox> I am but that does not mean I can solve the problem msyelf
+[19:56] <karan259> can there be cycles in the problem??
+[19:57] <Artox> no
+[19:57] <Artox> I am sure not
+[19:57] <Artox> but ofc I dont know
+[19:57] <karan259> or the paths are just trees??
+[19:57] <Artox> the amount of connectiosn you are told about dosen ot allwo a circle
+[19:57] <Artox> does not*
+[19:57] <karan259> so we have to assume that circles are not formed...
+[19:57] <Artox> I think so
+[19:57] <Artox> others agreed with me
+[19:58] <karan259> k.... thanks a lot...
+[20:00] == coeus_ [~coeus@static-213-182-116-248-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 246 seconds]
+[20:02] == hari_ [~hari@122.167.110.219] has joined #codesprint
+[20:03] == abc123 [7aacb97b@gateway/web/freenode/ip.122.172.185.123] has joined #codesprint
+[20:04] == abc123 has changed nick to Guest46255
+[20:04] == shrey_neo [65d2fbe1@gateway/web/freenode/ip.101.210.251.225] has joined #codesprint
+[20:06] == x539 [4fd41776@gateway/web/freenode/ip.79.212.23.118] has joined #codesprint
+[20:06] == karan259 [dfecee8b@gateway/web/freenode/ip.223.236.238.139] has quit [Quit: Page closed]
+[20:12] == abc [b495342d@gateway/web/freenode/ip.180.149.52.45] has joined #codesprint
+[20:13] == abc [b495342d@gateway/web/freenode/ip.180.149.52.45] has quit [Client Quit]
+[20:14] == Mun [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has quit [Quit: Page closed]
+[20:14] == coeus_ [~coeus@static-213-182-123-142-teleos.ewe-ip-backbone.de] has joined #codesprint
+[20:16] <keas> hey, anybody working on stock analysis?
+[20:18] == shrey_neo [65d2fbe1@gateway/web/freenode/ip.101.210.251.225] has quit [Quit: Page closed]
+[20:23] == coeus [~coeus@static-213-182-121-221-teleos.ewe-ip-backbone.de] has joined #codesprint
+[20:23] == ninj4 [86037853@gateway/web/freenode/ip.134.3.120.83] has joined #codesprint
+[20:25] == coeus_ [~coeus@static-213-182-123-142-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 252 seconds]
+[20:31] == coeus_ [~coeus@static-213-182-123-056-teleos.ewe-ip-backbone.de] has joined #codesprint
+[20:31] == coeus [~coeus@static-213-182-121-221-teleos.ewe-ip-backbone.de] has quit [Read error: Operation timed out]
+[20:32] == balabarath [75c92bf0@gateway/web/freenode/ip.117.201.43.240] has joined #codesprint
+[20:35] == ninj4 [86037853@gateway/web/freenode/ip.134.3.120.83] has quit [Ping timeout: 245 seconds]
+[20:41] == mdunicorn [5b62d120@gateway/web/freenode/ip.91.98.209.32] has joined #codesprint
+[20:45] == keas [4d0c3456@gateway/web/freenode/ip.77.12.52.86] has quit [Quit: Page closed]
+[20:48] == coeus [~coeus@static-213-182-106-197-teleos.ewe-ip-backbone.de] has joined #codesprint
+[20:49] == coeus_ [~coeus@static-213-182-123-056-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 246 seconds]
+[20:51] == coeus_ [~coeus@static-213-182-118-097-teleos.ewe-ip-backbone.de] has joined #codesprint
+[20:54] == Guest46255 [7aacb97b@gateway/web/freenode/ip.122.172.185.123] has quit [Ping timeout: 245 seconds]
+[20:54] == coeus [~coeus@static-213-182-106-197-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 240 seconds]
+[20:57] == coeus [~coeus@static-213-182-104-101-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:00] == coeus_ [~coeus@static-213-182-118-097-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 260 seconds]
+[21:03] == coeus_ [~coeus@static-213-182-127-115-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:05] == coeus [~coeus@static-213-182-104-101-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 245 seconds]
+[21:07] == coeus [~coeus@static-213-182-113-039-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:09] == coeus_ [~coeus@static-213-182-127-115-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 240 seconds]
+[21:15] == coeus_ [~coeus@static-213-182-116-097-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:17] == coeus [~coeus@static-213-182-113-039-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 265 seconds]
+[21:18] == coeus [~coeus@static-213-182-111-052-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:20] == maddoob [4db3e224@gateway/web/freenode/ip.77.179.226.36] has joined #codesprint
+[21:20] == coeus_ [~coeus@static-213-182-116-097-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 246 seconds]
+[21:23] <maddoob> Hello guys!
+[21:23] <maddoob> I have a question about the task Stock Analysis. Here it is. If the distance D is equal to 3, as in an example. It would be possible to solve the problem only with two lines - middle point at 5, 6
+[21:23] == pelka [83f6e74f@gateway/web/freenode/ip.131.246.231.79] has joined #codesprint
+[21:24] <@vivmbbs> yes
+[21:24] <maddoob> so the example output in the description is incorrect?
+[21:24] <@vivmbbs> it's just an example
+[21:25] <maddoob> ok thanks
+[21:27] == s2 [7aacb9f1@gateway/web/freenode/ip.122.172.185.241] has joined #codesprint
+[21:28] == coeus_ [~coeus@static-213-182-124-200-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:30] == yzaikin [5f853e75@gateway/web/freenode/ip.95.133.62.117] has joined #codesprint
+[21:31] <yzaikin> hello. is it possible to see the score of the solution for each individual test case?
+[21:31] == coeus [~coeus@static-213-182-111-052-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 248 seconds]
+[21:31] <Artox> <maddoob> I have a question about the task Stock Analysis. Here it is. If the distance D is equal to 3
+[21:32] <Artox> the text says less than 3
+[21:32] <Artox> so may distance be equal D too?
+[21:39] == hariharan [75cb6343@gateway/web/freenode/ip.117.203.99.67] has joined #codesprint
+[21:40] <pelka> "less than" means less, therefore not equal
+[21:40] <Artox> just like integer meant float ealier today
+[21:43] <@vivmbbs> Artox, i'm sorry about it. I understand you're very frustrated and hence the comment. but this is a new type of problem and we're ironing out all possible issues
+[21:43] <@vivmbbs> sorry
+[21:44] <Artox> so it is really less than meant
+[21:45] == balabarath [75c92bf0@gateway/web/freenode/ip.117.201.43.240] has quit [Ping timeout: 245 seconds]
+[21:46] == Mun [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has joined #codesprint
+[21:46] <@vivmbbs> it's <=
+[21:46] <@vivmbbs> updated the problem statement
+[21:46] <Artox> ok
+[21:46] == hariharan [75cb6343@gateway/web/freenode/ip.117.203.99.67] has quit [Ping timeout: 245 seconds]
+[21:48] == coeus [~coeus@static-213-182-119-151-teleos.ewe-ip-backbone.de] has joined #codesprint
+[21:50] == coeus_ [~coeus@static-213-182-124-200-teleos.ewe-ip-backbone.de] has quit [Ping timeout: 265 seconds]
+[21:53] == abc [b6bc8b65@gateway/web/freenode/ip.182.188.139.101] has joined #codesprint
+[21:56] == g4ur4v_ [7c7d5090@gateway/web/freenode/ip.124.125.80.144] has joined #codesprint
+[21:57] <g4ur4v_> for me solved status say 1 but score =0
+[21:57] <g4ur4v_> what does that mean ?
+[21:57] == maddoob [4db3e224@gateway/web/freenode/ip.77.179.226.36] has quit [Ping timeout: 245 seconds]
+[21:57] == pelka [83f6e74f@gateway/web/freenode/ip.131.246.231.79] has quit [Quit: Page closed]
+[21:59] <hari_> g4ur4v_, hi, the solved status can be ignored.
+[22:01] <pedrosorio> interesting issue... why is the score for stocks 1/(L-1)?
+[22:01] <pedrosorio> intuitively, cases with big N will have larger L and thus a small score
+[22:01] <pedrosorio> but I may be wrong
+@idlecool
+@vivmbbs
+a11235
+abc
+akshay_
+alexhanh
+anthonyhurst_
+Artox
+ayonix
+bavario
+ChrisOelmueller
+coeus
+compass
+contradictioned
+cyphase
+g4ur4v_
+gic
+hari_
+hhj3809092jjkdk9
+inf_
+jefri
+mdunicorn
+molqr
+Mun
+pbl64k
+pedrosorio
+perry
+polkabot
+qwebirc185297
+R0mai
+rcs
+s2
+stoyanr
+syst3mw0rm
+x539
+yzaikin
+z4nt4

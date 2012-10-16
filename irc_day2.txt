@@ -1,0 +1,136 @@
+== stoyanr [5e1a2f02@gateway/web/freenode/ip.94.26.47.2] has joined #codesprint
+[21:49] <anthonyhurst_2> im somewhere else now :P
+[21:49] <@vivmbbs> working on it
+[21:50] <stoyanr> is the hackerrank site down?
+[21:50] <anthonyhurst_2> is it?
+[21:51] <@vivmbbs> working on it
+[21:51] <@vivmbbs> please wait
+[21:51] <@vivmbbs> heavy load
+[21:51] <anthonyhurst_2> :)
+[21:58] == codeN [b49535c2@gateway/web/freenode/ip.180.149.53.194] has joined #codesprint
+[22:01] == fuy[ [0e8bc403@gateway/web/freenode/ip.14.139.196.3] has joined #codesprint
+[22:01] == fuy[ [0e8bc403@gateway/web/freenode/ip.14.139.196.3] has left #codesprint []
+[22:02] == piyush_ [75ef5e14@gateway/web/freenode/ip.117.239.94.20] has joined #codesprint
+[22:03] == amlan_cmi [3d0c7252@gateway/web/freenode/ip.61.12.114.82] has joined #codesprint
+[22:04] == amlan_cmi [3d0c7252@gateway/web/freenode/ip.61.12.114.82] has left #codesprint []
+[22:04] <@vivmbbs> all submissions are processed/getting processed
+[22:05] <@vivmbbs> sorry for the delay - code checker queue became unbearable after someone wrote a script. working on it to prevent
+[22:05] <z4nt4> :)
+[22:06] == gritesh [ca034d0b@gateway/web/freenode/ip.202.3.77.11] has quit [Ping timeout: 245 seconds]
+[22:07] <stoyanr> I think you should seriously consider checking all submissions against each other automatically
+[22:08] <stoyanr> manually challenging other hackers is more appropriate for "Lady Popular" than a coding competition
+[22:08] <stoyanr> of course there will be scripts
+[22:08] <@vivmbbs> checking against each other means running nxn
+[22:08] <@vivmbbs> which isn't scalable
+[22:08] <@vivmbbs> that's why we got the elo rating implemented
+[22:09] <@vivmbbs> the manual play game is just for fun
+[22:09] <@vivmbbs> the side effects can be seen only when things are made live
+[22:09] <@vivmbbs> imho elo rating is fair and the best way to rate bot-vs-bot contests (e.g.; aichallenge.org)
+[22:09] <@vivmbbs> will try to work on it though
+[22:10] <stoyanr> where could I see the "elo rating"?
+[22:10] <@vivmbbs> it's in the scoring doc (hackerrank.com/scoring)
+[22:10] <stoyanr> the only scoring I see is on the leaderboard, and it changes based on who challenges whom
+[22:11] <@vivmbbs> or if you are in SAP challenge
+[22:11] <@vivmbbs> it'll be sap.hackerrank.com/scoring
+[22:11] <@vivmbbs> the scoring is (and will) definitely NOT be based on manual challenges
+[22:12] <hari_> stoyanr, with manual moves, 1000 players playing a 500 step game will take (each move taking 10 seconds) might take 317 years to compute (with say 1 machine)
+[22:12] <z4nt4> oh the leaderboard doesn't reflect who's winning winning the SAP challenge?
+[22:12] <stoyanr> The Elo rating system is a method for calculating the relative skill levels of players in two-player games such as chess
+[22:13] <@vivmbbs> yes
+[22:13] <stoyanr> so it's still about matching players against each other, right?
+[22:13] <z4nt4> vivmbbs: can you clarify that?
+[22:14] <@vivmbbs> yes, how else would you like it to be scored?
+[22:14] == smit [0e8b5206@gateway/web/freenode/ip.14.139.82.6] has quit [Quit: Page closed]
+[22:14] == BademiChetan [73fe7004@gateway/web/freenode/ip.115.254.112.4] has quit [Quit: Page closed]
+[22:15] <stoyanr> so you still need to match each bot against a number of other bots
+[22:15] == svm11 [0e6208ba@gateway/web/freenode/ip.14.98.8.186] has joined #codesprint
+[22:15] <stoyanr> you could do this automatically (not nxn of course)
+[22:15] <@vivmbbs> TowerResearch contest has ended. Thank you so much everyone for participating. Apologies for the last half hour that got delayed. Thanks everyone! and the TR team avinmittal sjindal
+[22:15] <@vivmbbs> stoyanr, can you tell me what solution you're proposing? and what you mean by "automatic" ?
+[22:17] == svm11 [0e6208ba@gateway/web/freenode/ip.14.98.8.186] has quit [Client Quit]
+[22:17] <stoyanr> I mean: get rid of manual challenges
+[22:17] <z4nt4> whats a manual challenge?
+[22:17] <z4nt4> where you type in the name of the person you want to challenge?
+[22:17] <stoyanr> match players with similar scores in the background (to avoid nxn)
+[22:18] == piyush_ [75ef5e14@gateway/web/freenode/ip.117.239.94.20] has quit [Ping timeout: 245 seconds]
+[22:20] == smit [0e8b5206@gateway/web/freenode/ip.14.139.82.6] has joined #codesprint
+[22:21] <stoyanr> yes, this is a manual challenge, isn't it? (unless you write a script ...)
+[22:21] <@vivmbbs> no it is not
+[22:21] <@vivmbbs> did you get a chance to read the scoring doc? (sap.hackerrank.com/scoring)
+[22:21] <@vivmbbs> the section bot-vs-bot challenges
+[22:22] <@vivmbbs> and how it is scored?
+[22:22] <stoyanr> yes, I did
+[22:23] <@vivmbbs> "For multiple submissions, your bot would be pitched against only bots that are ranked better than you. So, if you are ranked among top 5, your bot won?t play against any other bot on multiple submissions. If you feel you should be the topper, choose your opponent and play against them"
+[22:23] == polkabot [~polkabot@107.20.179.122] has quit [Remote host closed the connection]
+[22:24] == polkabot [~polkabot@idlecool.com] has joined #codesprint
+[22:25] <stoyanr> so, my bot is pitched against 5 better bots when I submit it
+[22:25] <stoyanr> it gets an initial ranking based on this
+[22:26] <stoyanr> but then this ranking changes based on players manually challenging each other
+[22:26] <stoyanr> am I missing something?
+[22:28] == blooops [3b5e02e8@gateway/web/freenode/ip.59.94.2.232] has joined #codesprint
+[22:28] <hari_> stoyanr, manual play will change your rank if you win against someone who is better than you
+[22:29] <stoyanr> I know, I was busy "playing" for a good part of the evening
+[22:29] <stoyanr> my rating improves while I "play", and goes down when I stop "playing"
+[22:30] <blooops> hi mods, in the tower research contest the upload kept saying 'try 5 mins later'. could you consider  an AC submit which missed by 46s ?
+[22:30] <stoyanr> what's the point?
+[22:31] <hari_> stoyanr, hmm.. I get your point. If you stop "playing" you shouldn't go down if your code is goo.
+[22:32] <stoyanr> exactly
+[22:33] <stoyanr> you could check my rating today, and compare it to my activity
+[22:33] == nadeemoidu [0e8b5206@gateway/web/freenode/ip.14.139.82.6] has quit [Quit: Page closed]
+[22:33] == codeN [b49535c2@gateway/web/freenode/ip.180.149.53.194] has quit [Ping timeout: 245 seconds]
+[22:33] <stoyanr> it's all with the same bot I wrote about 7 hours ago
+[22:35] <hari_> stoyanr, hmmm.. so, you believe if you don't challenge other bots or other bots, then your rating goes down?
+[22:35] <stoyanr> absolutely, as I said you could check how my rating changed today, and compare it to my activity
+[22:36] <stoyanr> this is what I am doing at the moment - boosting my rating by cherry-picking opponents who I didn't play with yet
+[22:36] == blooops [3b5e02e8@gateway/web/freenode/ip.59.94.2.232] has quit [Quit: Page closed]
+[22:37] == avinmittal_ [b6447660@gateway/web/freenode/ip.182.68.118.96] has quit [Quit: Page closed]
+[22:38] <stoyanr> aren't you aware that this is the case? (I thought it's all done on purpose ...)
+[22:42] <@vivmbbs> yes that was done on purpose - for e.g.: if the elo rating & bucketed scores missed playing you against a top player
+[22:42] <hari_> stoyanr, of course not. We want people to think and code, not keep clicking on that stupid 'Play Game' button..
+[22:42] <stoyanr> well, then get rid of the button ...
+[22:43] <stoyanr> don't get me wrong, coding was real fun
+[22:43] <hari_> stoyanr, I understand why you were so pissed off when you started.. I'll get some solution to remove this situation.
+[22:43] <stoyanr> your site also performed very well (well, mostly)
+[22:44] <stoyanr> it was a great experience
+[22:44] <z4nt4> so at the end of the contest, does our bot just play against bots within our rank regardless of what the scores say now?
+[22:44] <hari_> stoyanr, the reason that button is present to make sure the best player can move up. Since we play only against 5 players, even if your code is THE best, you won't automatically go to top.
+[22:45] <hari_> stoyanr, so the idea is you pick the topper and play against them and move to top. If you lose, no harm.. But this case we need to run our simulations again. I think for the top 50, I can run n*n to remove any unfair advantage
+[22:46] <stoyanr> congratulations, it was really one of the best coding challenges I've participated in
+[22:46] <stoyanr> yes, this would probably work
+[22:47] <stoyanr> maybe the button is there for the top 5, but it can be exploited as I explained
+[22:47] <hari_> stoyanr, yeah.. cool :) then we will do that for this contest and fix it for the next contest.
+[22:47] <stoyanr> I am pretty sure I am not the only one who found this
+[22:48] <stoyanr> great
+[22:50] == akshay [~akshay@122.167.212.108] has quit [Ping timeout: 246 seconds]
+[22:53] == smit [0e8b5206@gateway/web/freenode/ip.14.139.82.6] has quit [Quit: Page closed]
+[22:57] == arijit91 [0e8ba004@gateway/web/freenode/ip.14.139.160.4] has quit [Ping timeout: 245 seconds]
+[23:03] == akshay [~akshay@122.178.201.58] has joined #codesprint
+[23:10] == walrus__ [7ab0cac5@gateway/web/freenode/ip.122.176.202.197] has quit [Ping timeout: 245 seconds]
+@idlecool
+@vivmbbs
+a11235
+aki__
+akshay
+alexhanh
+anthonyhurst_
+anthonyhurst_2
+avinmittal
+ayonix
+Caroline
+ChrisOelmueller
+coeus
+contradictioned
+cyphase
+gic
+hari_
+jakobm
+jesseFromYVR
+molqr
+perry
+polkabot
+rcs
+sjindal
+stoyanr
+syst3mw0rm
+walrus_
+z4nt4

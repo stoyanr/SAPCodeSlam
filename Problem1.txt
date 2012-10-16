@@ -1,0 +1,67 @@
+Mark takes care of stock trades at A&B Corporation. He needs to predict when he needs to buy stock and when to sell it. He has come with with an innovative approach for this task, and now he needs to test his method on the previously collected data for stock prices.
+ 
+To predict bullish and bearish trends, he needs to refine the data. The whole set of stock prices is plotted as (day, price) on X-Y plane and then decomposed into set of line segments. 
+ 
+A line segment is said to represent a set of prices for some consecutive days if the vertical distances (y-distance) of the points from that line is less than a given parameter D.
+ 
+The task is to find minimum number of line segments that will serve as the representative of the whole data.
+ 
+The figure below shows stock prices for previous 10 days and the data has to be fitted with minimum number of lines for D = 3. Here is one possible representation using 4 lines. 
+ 
+Line (1,2) -> (4,6) represent first four points.
+Line (4,6) -> (5,6) represent next two points,
+Line (5,6) -> (8,3) represent next four points, and
+Line (8,3) -> (10,3) represent last three points.
+ 
+However for same D it can be done using three lines too. (1, 2) -> (5, 6), (5, 6)->(8, 3), and (8, 3)->(10, 3).
+
+
+ 
+
+Input Format
+ 
+First lines contain two integers N (< 10^6) and D (< 10^6). Next N lines each contain two integers i and pi, pi is the price for ith day.
+ 
+Ouput Format
+ 
+The first line of output should contain L , L-1 is the number of representative lines. Next L lines should contain two integers, xi yi, each.
+For each i, such that 1 <= i < L, (xi, yi)->(xi+1, yi+1) is a representative line. 
+x1 = 1, xL <= xi <= N. 
+Score = 1/(L-1)
+
+Sample Input
+
+10 3
+1 2
+2 3
+3 4
+4 6
+5 6
+6 5
+7 4
+8 3
+9 3
+10 3
+
+Sample Output
+ 
+5
+1 2
+4 6
+5 6
+8 3
+10 3
+ 
+Score = 1/4 = 0.25
+ 
+Explanation
+The above sample input and sample output correspond to the the above figure.
+ 
+Note: This question is an approximate algorithm question i.e the score depends on the quality of output. The maximum score is 5 (there are 5 test-cases). So the verdict by judge may be "Wrong Answer" but you can see the score of your submission in "Submissions" tab.
+Compile & Test won't work for approximate algorithm problems. Please submit your answers directly.
+ 
+
+
+ Download sample testcases as zip
+ 
+

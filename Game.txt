@@ -1,0 +1,44 @@
+The Bidding Game
+An expensive scotch is kept at position 4. Scotch is won if it reaches the extremum. Write an intelligent bot to get the scotch both as first and as well as the second player.
+
+0-1-2-3-4-S-6-7-8-9-10
+P1                              P2
+
+Two players are on the opposite ends of a straight line with an expensive scotch (S) that they both want placed in the middle at position #5. The players start the game with $100 in hand. During each turn both players make a bid simultaneously. After each turn, the bottle is placed one step closer to the player who makes the higher bid and the winner’s bid is deducted from his hand. The game ends when the bottle reaches a player or if a player runs out of money, whichever occurs first. In case of an equal bid, the bottle would go to the first player and the next draw, it would go to second player. It alternates henceforth.
+
+The function calculate_bid takes in 4 parameters - an integer player, the position of the scotch pos, an array first_moves that contains the previous bids made by player 1 and an array second_moves that contails the previous bids mady by player 2. Complete the function to return an integer which is your next bid amount. Bids can’t be zero.
+
+Lets consider an intermediate state in the game with the above 4 parameters
+
+Sample input for Player 1:
+
+1
+6
+10 8 10
+5 20 30
+Sample output for Player 1:
+
+20
+Sample input for Player 2:
+
+2
+6
+10 8 10
+5 20 30
+Sample output for Player 2:
+
+10
+Resulting configuration
+
+0-1-2-3-4-S-6-7-8-9-10
+
+Explaination:
+
+Initially, both players have $100 and the scotch is at #5. The current state of the bid is such that the scotch is at position #6 with player 1’s bids being 10,8 and 10 and player 2’s bids being 5,20 and 30. Clearly player 2 has won 2 of the 3 bids and the scotch is now at position 6.
+
+Now, player-1 bids $20 and player-2 bids $10. Player-1 wins the bid this time and the scotch moves one step closer and reaches position #5 again.
+
+The game goes on till the scotch reaches a person or one of the players loses all the money whichever occurs first.
+
+How does it work? 
+Complete the function calculate_bid to return an integer which is your bid value based on the current state. When placing a bid, both the players have the same information. The code is run alternately with yours and the opponent bot
